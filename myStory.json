@@ -1,0 +1,243 @@
+{
+    "Title": "Mysterious House",
+    "Credits": "Created by Annie McKay (idmckay@ucsc.edu).\nCode originally developed by Adam Smith",
+    "InitialLocation": "StartingRoom",
+    "Locations": {
+        "StartingRoom": {
+            "Body": "You wake up in a small room that you do not recognize.",
+            "Choices": [
+                {
+                    "Text": "LeaveRoom",
+                    "Target": "MainRoom",
+                    "Action": "Move"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A note",
+                    "Searched": false
+                },
+                {
+                    "Text": "Use Item",
+                    "DocumentStuff": "YOU CANNOT LEAVE! But I hope u enjoy ur stay! :)",
+                    "Action": "Use Item"
+                }
+            ]
+        },
+        "MainRoom": {
+            "Body": "You enter a room with a huge door. There are 2 locks on the door. There are also multiple doors branching out of this room.",
+            "Choices": [
+                {
+                    "Text": "Go back.",
+                    "Target": "StartingRoom"
+                },
+                {
+                    "Text": "Go into Hall Way",
+                    "Target": "DownTheHall"
+                },
+                {
+                    "Text": "Go into bathroom",
+                    "Target": "Bathroom"
+                },
+                {
+                    "Text": "Go into Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "Nothing",
+                    "Searched": false
+                },
+                {
+                    "Text": "Open Door",
+                    "Action": "WinGame",
+                    "ErrorMessage": "You need 2 keys to open this door.",
+                    "Target": "Beyond",
+                    "Key1": false,
+                    "Key2": false
+                }
+            ]
+        },
+        "DownTheHall": {
+            "Body": "The hallway! You can enter the kitchen or a Master Bedroom",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "MainRoom"
+                },
+                {
+                    "Text": "Bedroom",
+                    "Target": "MasterBedroom"
+                },
+                {
+                    "Text": "Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "Nothing",
+                    "Searched": false
+                },
+                {
+                    "Text": "Nevermind",
+                    "Target": "MainRoom"
+                }
+            ]
+        },
+        "MasterBedroom": {
+            "Body": "You enter the Master Bedroom, presumably where the owner of the house sleeps",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "DownTheHall"
+                },
+                {
+                    "Text": "Master Bathroom",
+                    "Target": "MasterBathroom"
+                },
+                {
+                    "Text": "Closet",
+                    "Target": "Closet"
+                },
+                {
+                    "Text": "Balcony",
+                    "Action": "Poop",
+                    "Document": "Its locked."
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A weird and creepy collection of photos. The photos are all of you and people you are close with.",
+                    "Searched": false
+                }
+            ]
+        },
+        "MasterBathroom": {
+            "Body": "You enter a normal looking bathroom.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "MasterBedroom"
+                },
+                {
+                    "Text": "Closet",
+                    "Target": "Closet"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "Nothing",
+                    "Searched": false
+                },
+                {
+                    "Text": "Poop",
+                    "Action": "Poop",
+                    "Document": "You took care of business."
+                }
+            ]
+        },
+        "Closet": {
+            "Body": "You enter the master closet filled with fancy clothes.",
+            "Choices": [
+                {
+                    "Text": "Leave closet",
+                    "Target": "MasterBedroom"
+                },
+                {
+                    "Text": "Go into bathroom",
+                    "Target": "MasterBathroom"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A secret hidden door",
+                    "Searched": false
+                },
+                {
+                    "Text": "Secret Door",
+                    "Target": "SecretRoom2"
+                }
+            ]
+        },
+        "Bathroom": {
+            "Body": "You enter a normal looking bathroom.",
+            "Choices": [
+                {
+                    "Text": "Leave the bathroom",
+                    "Target": "MasterBedroom"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A secret hidden door",
+                    "Searched": false
+                },
+                {
+                    "Text": "Secret Door",
+                    "Target": "SecretRoom1"
+                },
+                {
+                    "Text": "Poop",
+                    "Action": "Poop",
+                    "Document": "You took care of business."
+                }
+            ]
+        },
+        "Kitchen": {
+            "Body": "You enter the kitchen",
+            "Choices": [
+                {
+                    "Text": "Leave kitchen",
+                    "Target": "MainRoom"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A secret hidden door",
+                    "Searched": false
+                },
+                {
+                    "Text": "Secret Door",
+                    "Target": "SecretRoom1"
+                }
+            ]
+        },
+        "SecretRoom1": {
+            "Body": "You enter the small and cramped secret room that you found.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "MainRoom"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A Key!",
+                    "keynum": 1,
+                    "Searched": false
+                }
+            ]
+        },
+        "SecretRoom2": {
+            "Body": "You enter the small and cramped secret room that you found.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "Closet"
+                },
+                {
+                    "Text": "Search",
+                    "Action": "Search",
+                    "Items": "A Key!",
+                    "keynum": 2,
+                    "Searched": false
+                }
+            ]
+        },
+        "Beyond": {
+            "Body": "Yay! You escaped the house"
+        }
+    }
+}
